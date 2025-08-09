@@ -1,0 +1,15 @@
+# Secrets and sensitive files
+secrets.json
+/secrets.json
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Local sent-log files
+.sent_highlights.json
+.sent_highlights_local.json
+
+# Pyto temporary test files
+.pyto_write_test.tmp
+
