@@ -158,7 +158,7 @@ ONLY_TITLES = ["foundation"]
 BATCH_LIMIT = 2
 ```
 
-**How it works**
+## How it works
 	1. Loads Zotero API credentials from secrets.json.
 	2. Reads .md files from OBSIDIAN_VAULT_PATH (recursively).
 	3. Parses each file for title, author, and highlights.
@@ -169,21 +169,21 @@ BATCH_LIMIT = 2
 
 ⸻
 
-**Duplicate prevention**
+## Duplicate prevention
 
 The .sent_highlights.json log also tracks individual highlights sent to Zotero.
 If a highlight’s text/note/location matches a previously sent one, it will not be sent again — even if you re-run the script.
 
 ⸻
 
-**Resume mode**
+## Resume mode
 
 When RESUME_ENABLED = True, the script remembers which books it finished in live runs and skips them in future runs.
 Safe for large libraries or interrupted runs.
 
 ⸻
 
-**Filtering and batch limiting**
+## Filtering and batch limiting
 - ONLY_TITLES: list of substrings to match in book titles (case-insensitive).
 - BATCH_LIMIT: integer; process at most N matching books in one run.
 
@@ -191,14 +191,14 @@ You can combine both for targeted batch updates.
 
 ⸻
 
-**Collections (“Books”)**
+## Collections (“Books”)
 
 The script will create (or reuse) a Zotero collection named Books by default.
 Change COLLECTION_NAME to target a different one.
 
 ⸻
 
-**Troubleshooting**
+## Troubleshooting
 - Permission errors on iPad usually mean Pyto can’t read from iCloud.
 	- Copy your notes into On My iPad / Pyto.
 - If Dry run still creates items, make sure DRY_RUN = True and you’re using the latest script.
@@ -208,21 +208,21 @@ Change COLLECTION_NAME to target a different one.
 
 ⸻
 
-**Security: API key**
+## Security: API key
 - Store your key only in secrets.json.
 - Never commit it to GitHub.
 - The key must have write permission to the Zotero library you’re targeting.
 
 ⸻
 
-**Advanced: macOS/Windows/Linux**
+## Advanced: macOS/Windows/Linux
 
 You can run this script on desktop Python 3.10+ with the requests library installed.
 Adjust OBSIDIAN_VAULT_PATH to your local vault folder path.
 
 ⸻
 
-**FAQ**
+## FAQ
 
 **Q: Will this overwrite my Zotero data?**
 A: No, it only creates new book items (if missing) and appends notes.
@@ -232,13 +232,13 @@ A: Yes — set "USE_GROUP": true in secrets.json and ZOTERO_USER_ID to the group
 
 ⸻
 
-**Roadmap**
+## Roadmap
 - Optional HTML-to-Markdown conversion for notes
 - Configurable note formatting
 - GUI picker for vault path on iPad
 
 ⸻
 
-**License**
+## License
 
 MIT — do whatever you want, but no warranty.
